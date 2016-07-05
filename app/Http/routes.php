@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**
+ * 코드그룹
+ */
+Route::resource('mth-code-groups', 'MthCodeGroupController');
+
+/**
+ * 코드
+ */
+Route::resource('mth-code', 'MthCodeController');

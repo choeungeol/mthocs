@@ -12,7 +12,7 @@ class CreateCodegroupTable extends Migration
      */
     public function up()
     {
-        Schema::create('mthcodegroups', function (Blueprint $table) {
+        Schema::create('mth_code_groups', function (Blueprint $table) {
             $table->increments('id');
             $table->string('group_id',10)->unique();
             $table->string('group_name', 20);
@@ -29,6 +29,6 @@ class CreateCodegroupTable extends Migration
      */
     public function down()
     {
-        Schema::drop('mthcodegroups');
+        Schema::drop('mth_code_groups');
     }
 }

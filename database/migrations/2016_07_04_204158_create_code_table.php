@@ -12,14 +12,14 @@ class CreateCodeTable extends Migration
      */
     public function up()
     {
-        Schema::create('mthcodes', function (Blueprint $table) {
+        Schema::create('mth_codes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('code_group_id')->unsigned();
-            $table->foreign('code_group_id')->references('id')->on('mthcodegroups');
+            $table->integer('mth_code_group_id')->unsigned();
+            $table->foreign('mth_code_group_id')->references('id')->on('mth_code_groups');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('code_id', 20);
-            $table->string('code_name', 40);
+            $table->string('code_name', 60);
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateCodeTable extends Migration
      */
     public function down()
     {
-        Schema::drop('mthcodes');
+        Schema::drop('mth_codes');
     }
 }
