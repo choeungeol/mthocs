@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant/mthocsemr":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/mthocsemr","hostpath":"D:/project/mthocsemr","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/project/mthocsemr","disabled":false,"__vagrantfile":true}}}
