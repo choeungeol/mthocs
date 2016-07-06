@@ -18,7 +18,7 @@ Route::get('/', function () {
 /**
  * 코드그룹
  */
-Route::resource('mth-code-groups', 'MthCodeGroupController');
+Route::resource('mth-code-group', 'MthCodeGroupController');
 
 /**
  * 코드
