@@ -15,11 +15,11 @@ class CreateMthPatientsTable extends Migration
         Schema::create('mth_patients', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 40);         //수진자명
-            $table->string('id_num', 50);       //주민번호 (XXXXXX-XXXXXXX 형태를 XXXXXXXXXXXXX 로 저장) - 암호화/validation
+            $table->string('id_num', 50);       //주민번호 (XXXXXX-XXXXXXX) - 암호화/validation
             $table->string('birthday', 8);      //생년월일 (780517 형식) - validation
             $table->boolean('chk_solar');       //양력
-            $table->string('buss_num', 10)
-                  ->nullable();                 //사업자등록번호(XXX-XX-XXXXX 형태를 XXXXXXXXXX로 저장) - 암호화/validation
+            $table->string('buss_num', 50)
+                  ->nullable();                 //사업자등록번호(XXX-XX-XXXXX 형태) - 암호화/validation
             $table->string('buss_nam', 50)
                   ->nullable();                 //사업자명
             $table->string('phone', 20)
