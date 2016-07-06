@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://ocsemr.app'),
+    'url' => env('APP_URL', 'http://mthocsemr.app'),
 
     /*
     |--------------------------------------------------------------------------
