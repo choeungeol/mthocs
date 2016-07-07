@@ -11,6 +11,11 @@
 |
 */
 
+/**
+ *  권한
+ */
+Route::auth();
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -24,6 +29,5 @@ Route::resource('mth-code-group', 'MthCodeGroupController');
  * 코드
  */
 Route::resource('mth-code', 'MthCodeController');
-Route::auth();
 
 Route::get('/home', 'HomeController@index');
