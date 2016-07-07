@@ -24,3 +24,6 @@ Route::resource('mth-code-group', 'MthCodeGroupController');
  * 코드
  */
 Route::resource('mth-code', 'MthCodeController');
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
