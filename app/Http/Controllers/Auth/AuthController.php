@@ -120,4 +120,60 @@ class AuthController extends Controller
             'github_id' => $githubUser->id,
         ]);
     }
+
+    /**
+     * 사용자를 카카오 인증 페이지로 전환
+     *
+     * @return Response
+     */
+    public function redirectToKakao()
+    {
+        return Socialite::driver('kakao')->redirect();
+    }
+
+    /**
+     * 깃허브에서 인증이 완료된 사용자 정보를 받아서 처리
+     *
+     * @return Response
+     */
+    public function handleKakaoCallback()
+    {
+        try {
+            $user = Socialite::driver('kakao')->user();
+        } catch (Exception $e) {
+            return redirect('auth/kakao');
+        }
+
+        $user = $this->findOrCreateUserKakao($user);
+
+        \Auth::login($user);
+
+        return redirect()->intended($this->redirectPath());
+    }
+
+    /**
+     * 카카오 인증에 성공한 후 받은 사용자 정보가 데이터베이스에 없을 경우 생성하고 이미 있는 경우 가져온다
+     *
+     * @param $kakaoUser 카카오에서 전달받은 사용자 정보
+     *
+     * @return User
+     */
+    public function findOrCreateUserKakao($kakaoUser)
+    {
+        if ($user = User::where('kakao_id', $kakaoUser->id)->first()) {
+            return $user;
+        }
+
+        if (empty($kakaoUser->email)) {
+            $kakaoUser->email = $kakaoUser->id . '@hnsc.com';
+        }
+
+        //name, email은 null값으로 가져온다
+        return User::create([
+            'name'      => $kakaoUser->nickname,
+            'email'     => $kakaoUser->email,
+            'kakao_id'  => $kakaoUser->id,
+        ]);
+    }
+
 }

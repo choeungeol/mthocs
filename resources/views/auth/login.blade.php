@@ -56,6 +56,13 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="col-md-4 control-label"></label>
+                            <div class="col-md-6">
+                                <a href="/auth/kakao">kakao 계정으로 로그인 하기</a>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-sign-in"></i> 로그인

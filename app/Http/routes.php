@@ -23,6 +23,10 @@ Route::auth();
 Route::get('auth/github', 'Auth\AuthController@redirectToGitHub');
 Route::get('auth/github/callback', 'Auth\AuthController@handleGitHubCallback');
 
+//Kakao 인증
+Route::get('auth/kakao', 'Auth\AuthController@redirectToKakao');
+Route::get('auth/kakao/callback', 'Auth\AuthController@handleKakaoCallback');
+
 /**
  * 초기화면
  */
