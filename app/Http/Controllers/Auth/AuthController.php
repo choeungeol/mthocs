@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Socialite;
 
 class AuthController extends Controller
 {
@@ -67,6 +68,56 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+        ]);
+    }
+
+    /**
+     * 사용자를 깃허브 인증 페이지로 전환
+     *
+     * @return Response
+     */
+    public function redirectToGitHub()
+    {
+        return Socialite::driver('github')->redirect();
+    }
+
+    /**
+     * 깃허브에서 인증이 완료된 사용자 정보를 받아서 처리
+     *
+     * @return Response
+     */
+    public function handleGitHubCallback()
+    {
+        try {
+            $user = Socialite::driver('github')->user();
+        } catch (Exception $e) {
+            return redirect('auth/github');
+        }
+
+        $user = $this->findOrCreateUser($user);
+
+        \Auth::login($user);
+
+        return redirect()->intended($this->redirectPath());
+    }
+
+    /**
+     * 깃허브 인증에 성공한 후 받은 사용자 정보가 데이터베이스에 없을 경우 생성하고 이미 있는 경우 가져온다
+     *
+     * @param $githubUser 깃허브에서 전달받은 사용자 정보
+     *
+     * @return User
+     */
+    public function findOrCreateUser($githubUser)
+    {
+        if ($user = User::where('github_id', $githubUser->id)->first()) {
+            return $user;
+        }
+
+        return User::create([
+            'name'      => $githubUser->name,
+            'email'     => $githubUser->email,
+            'github_id' => $githubUser->id,
         ]);
     }
 }

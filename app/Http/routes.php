@@ -16,18 +16,26 @@
  */
 Route::auth();
 
+/**
+ * OAuth 인증
+ */
+//Github 인증
+Route::get('auth/github', 'Auth\AuthController@redirectToGitHub');
+Route::get('auth/github/callback', 'Auth\AuthController@handleGitHubCallback');
+
+/**
+ * 초기화면
+ */
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', 'HomeController@index');
+
 /**
- * 코드그룹
+ * 코드그룹/코드
  */
 Route::resource('mth-code-group', 'MthCodeGroupController');
-
-/**
- * 코드
- */
 Route::resource('mth-code', 'MthCodeController');
 
-Route::get('/home', 'HomeController@index');
+
