@@ -840,5 +840,33 @@ class MthCodeTableSeeder extends Seeder
             'updated_at'        => \Carbon\Carbon::now(),
         ]);
 
+        // 직원구분
+        DB::table('mth_codes')->insert([
+            'mth_code_group_id' => 10,
+            'user_id'           => 1,
+            'code_id'           => 'EMP001',
+            'code_name'         => '의사',
+            'created_at'        => \Carbon\Carbon::now(),
+            'updated_at'        => \Carbon\Carbon::now(),
+        ]);
+
+        DB::table('mth_codes')->insert([
+            'mth_code_group_id' => 10,
+            'user_id'           => 1,
+            'code_id'           => 'EMP002',
+            'code_name'         => '간호사',
+            'created_at'        => \Carbon\Carbon::now(),
+            'updated_at'        => \Carbon\Carbon::now(),
+        ]);
+
+        DB::table('mth_codes')->insert([
+            'mth_code_group_id' => 10,
+            'user_id'           => 1,
+            'code_id'           => 'EMP003',
+            'code_name'         => '간호조무사',
+            'created_at'        => \Carbon\Carbon::now(),
+            'updated_at'        => \Carbon\Carbon::now(),
+        ]);
+
     }
 }

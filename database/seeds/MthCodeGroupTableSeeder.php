@@ -92,5 +92,14 @@ class MthCodeGroupTableSeeder extends Seeder
             'updated_at'    => \Carbon\Carbon::now(),
         ]);
 
+        // 직원구분
+        DB::table('mth_code_groups')->insert([
+            'group_id'      => 'EMP',
+            'group_name'    => '직원구분',
+            'user_id'       => 1,
+            'created_at'    => \Carbon\Carbon::now(),
+            'updated_at'    => \Carbon\Carbon::now(),
+        ]);
+
     }
 }
