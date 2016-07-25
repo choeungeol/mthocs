@@ -7,7 +7,10 @@ class CreateSickRoomsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * id           : 병실키
+     * mth_ward_id  : 병동키
+     * name         : 병실명
+     * description  : 병실내역
      * @return void
      */
     public function up()
@@ -15,12 +18,12 @@ class CreateSickRoomsTable extends Migration
         Schema::create('mth_sick_rooms', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('mth_ward_id')
-                ->unsigned();                       // 병동키
+                ->unsigned();
             $table->foreign('mth_ward_id')
                 ->references('id')
                 ->on('mth_wards');
-            $table->string('name', 30);             // 병실명
-            $table->text('description');             // 병실내역
+            $table->string('name', 30);
+            $table->text('description');
             $table->timestamps();
         });
     }

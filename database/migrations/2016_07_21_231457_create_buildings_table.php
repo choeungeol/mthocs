@@ -7,7 +7,11 @@ class CreateBuildingsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * id           : 건물키
+     * postal_code  : 우편번호
+     * addr         : 주소
+     * addr_detail  : 상세주소
+     * name         : 건물명
      * @return void
      */
     public function up()

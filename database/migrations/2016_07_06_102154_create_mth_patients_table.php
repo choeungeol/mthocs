@@ -7,7 +7,29 @@ class CreateMthPatientsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * id           : 수진자키
+     * name         : 수진자명
+     * id_num       : 주민등록번호 (XXXXXX-XXXXXXX, 암호화, validation)
+     * birthday     : 생년월일 (XXXXXX, validation)
+     * chk_solar    : 양력
+     * buss_num     : 사업자등록번호 (XXX-XX-XXXXX, 암호화, validation)
+     * buss_nam     : 사업자명
+     * phone        : 전화번호 (XX-XXX-XXXX, 암호화, validation)
+     * cellphone    : 휴대폰번호 (XXX-XXX-XXXX, 암호화, validation)
+     * email        : 이메일 (validation)
+     * dis_id       : 장애분류키
+     * info_agg     : 정보동의여부
+     * foreigner    : 외국인여부
+     * married      : 기혼여부
+     * chk_list     : 블랙리스트
+     * chk_pager    : 문자수신여부
+     * chk_email    : 이메일수신여부
+     * postal_code  : 우편번호 (validation)
+     * addr         : 주소
+     * addr_detail  : 상세주소
+     * vet_id       : 보훈구분키
+     * vet_num      : 보훈번호
+     * memo         : 메모
      * @return void
      */
     public function up()
