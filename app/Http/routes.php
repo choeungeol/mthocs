@@ -37,6 +37,15 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index');
 
 /**
+ * 시스템관리
+ */
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/', function() {
+       return view('app.admin.main');
+    });
+});
+
+/**
  * 코드그룹/코드
  */
 Route::resource('mth-code-group', 'MthCodeGroupController');
