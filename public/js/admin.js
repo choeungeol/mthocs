@@ -26,7 +26,7 @@ app.config(function($stateProvider) {
         });
 });
 
-app.controller('adminController',['$scope', '$http', function($scope, $http) {
+app.controller('adminController',['$scope', '$http' , '$state', function($scope, $http, $state) {
 
     $http.get("/mth-code-group")
         .then(
@@ -36,6 +36,7 @@ app.controller('adminController',['$scope', '$http', function($scope, $http) {
 
     $scope.clickCodeGroup = function ($codeGroup) {
         console.log($codeGroup);
+        $state.go('modify_code_group')
     };
 
 }]);

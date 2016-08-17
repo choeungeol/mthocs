@@ -1,9 +1,7 @@
 <div class="page-content-inner">
-
-    <!-- Basic Form Elements -->
     <section class="panel">
         <div class="panel-heading">
-            <h3>코드그룹 등록</h3>
+            <h3>코드그룹생성</h3>
         </div>
         <div class="panel-body">
             <div class="row">
@@ -12,6 +10,7 @@
                         <br />
                         <!-- Horizontal Form -->
                         <form>
+                            {{ csrf_field() }}
                             <div class="form-group row">
                                 <div class="col-md-3">
                                     <label class="form-control-label" for="group_id">코드그룹 ID</label>
@@ -29,8 +28,8 @@
                                 </div>
                             </div>
                             <div class="form-actions">
-                                <button type="button" class="btn btn-primary width-150">Submit</button>
-                                <button type="button" class="btn btn-default">Cancel</button>
+                                <button type="button" class="btn btn-primary width-150">저장</button>
+                                <button type="button" class="btn btn-default" ui-sref="intro">취소</button>
                             </div>
                         </form>
                         <!-- End Horizontal Form -->
