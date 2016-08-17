@@ -19,6 +19,7 @@ class CreateDoctorSchedulesTable extends Migration
     public function up()
     {
         Schema::create('mth_doctor_schedules', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('doctor_id')->unsigned();
             $table->foreign('doctor_id')->references('id')->on('mth_doctors');

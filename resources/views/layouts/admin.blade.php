@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>OCSEMR설정</title>
+    <title>마스터관리</title>
 
     @yield('css')
     @yield('scripts.header')
 </head>
-<body>
-
+<body class="theme-default">
+@include('layouts.admin.top')
+@include('layouts.admin.left')
 @yield('content')
-
 @yield('scripts.footer')
 </body>
 </html>

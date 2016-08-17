@@ -15,6 +15,7 @@ class CreateDoctorsTable extends Migration
     public function up()
     {
         Schema::create('mth_doctors', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('employee_id')->unsigned();
             $table->foreign('employee_id')->references('id')->on('mth_employees');

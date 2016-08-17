@@ -17,12 +17,13 @@ class CreateMthReservationsTable extends Migration
     public function up()
     {
         Schema::create('mth_reservations', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('mth_patient_id')->unsigned();
             $table->foreign('mth_patient_id')->references('id')->on('mth_patients');
             $table->text('reserve_reason')->nullable();
-            $table->integer('mth_examin_schedule_id')->unsigned();
-            $table->foreign('mth_examin_schedule_id')->references('id')->on('mth_examin_schedules');
+            $table->integer('examin_schedule')->unsigned()->nullable();
+            $table->foreign('examin_schedule')->references('id')->on('mth_examin_schedules');
             $table->boolean('canceled')->nullable();
             $table->timestamps();
         });

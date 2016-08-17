@@ -1,4 +1,4 @@
-var elixir = require('laravel-elixir');
+var elixir      = require('laravel-elixir');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,8 +12,12 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
+    //Clean UI 이동
+    mix.copy('resources/vendor/cleanui/build/assets', 'public/vendor/assets');
+
     mix.scripts(
         [
             'admin.js'
-        ], 'public/js/admin.js');
+        ], 'public/js/admin.js'
+    ).browserSync({proxy: 'mthocsemr.app'});
 });

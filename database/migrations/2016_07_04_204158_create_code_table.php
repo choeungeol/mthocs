@@ -13,6 +13,7 @@ class CreateCodeTable extends Migration
     public function up()
     {
         Schema::create('mth_codes', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('mth_code_group_id')->unsigned();
             $table->foreign('mth_code_group_id')->references('id')->on('mth_code_groups');

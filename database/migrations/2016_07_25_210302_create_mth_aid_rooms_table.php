@@ -17,6 +17,7 @@ class CreateMthAidRoomsTable extends Migration
     public function up()
     {
         Schema::create('mth_aid_rooms', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('mth_ward_id')
                 ->unsigned();

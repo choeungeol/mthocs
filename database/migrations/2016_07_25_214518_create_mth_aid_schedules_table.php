@@ -17,6 +17,7 @@ class CreateMthAidSchedulesTable extends Migration
     public function up()
     {
         Schema::create('mth_aid_schedules', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('aid_room_id')->unsigned();
             $table->foreign('aid_room_id')->references('id')->on('mth_aid_rooms');

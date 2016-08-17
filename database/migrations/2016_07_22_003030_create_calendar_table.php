@@ -19,6 +19,7 @@ class CreateCalendarTable extends Migration
     public function up()
     {
         Schema::create('mth_calendars', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->date('cal_date');
             $table->time('time_start');

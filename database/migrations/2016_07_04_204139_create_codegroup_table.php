@@ -13,6 +13,7 @@ class CreateCodegroupTable extends Migration
     public function up()
     {
         Schema::create('mth_code_groups', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('group_id',10)->unique();
             $table->string('group_name', 20);

@@ -19,13 +19,14 @@ class CreateMthExaminSchedulesTable extends Migration
     public function up()
     {
         Schema::create('mth_examin_schedules', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('mth_doctor_schedule_id')->unsigned();
-            $table->foreign('mth_doctor_schedule_id')->references('id')->on('mth_doctor_schedules');
+            $table->integer('doctor_schedule')->unsigned();
+            $table->foreign('doctor_schedule')->references('id')->on('mth_doctor_schedules');
             $table->integer('mth_chart_id')->unsigned()->nullable();
             $table->foreign('mth_chart_id')->references('id')->on('mth_charts');
-            $table->integer('mth_reservation_id')->unsigned()->nullable();
-            $table->foreign('mth_reservation_id')->references('id')->on('mth_reservations');
+            $table->integer('reserve')->unsigned()->nullable();
+            $table->foreign('reserve')->references('id')->on('mth_reservations');
             $table->time('reserve_time');
             $table->time('start_time')->nullable();
             $table->time('end_time')->nullable();

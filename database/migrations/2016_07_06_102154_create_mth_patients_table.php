@@ -35,6 +35,7 @@ class CreateMthPatientsTable extends Migration
     public function up()
     {
         Schema::create('mth_patients', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 40);         //수진자명
             $table->string('id_num', 1000);     //주민번호 (XXXXXX-XXXXXXX) - 암호화/validation

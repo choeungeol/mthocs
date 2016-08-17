@@ -32,6 +32,7 @@ class CreateMthChartsTable extends Migration
     public function up()
     {
         Schema::create('mth_charts', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('medical_chart',20)->unique()->index();
             $table->integer('mth_patient_id')->unsigned();
