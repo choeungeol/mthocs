@@ -1,7 +1,7 @@
 <nav class="left-menu" left-menu>
     <div class="logo-container">
         <a href="/" class="logo">
-            <img src="vendor/assets/common/img/logo.png" alt="마스터관리" />
+            <img src="vendor/assets/common/img/ocsemr_logo.png" alt="마스터관리" />
             <img class="logo-inverse" src="vendor/assets/common/img/logo-inverse.png" alt="마스터관리" />
         </a>
     </div>
