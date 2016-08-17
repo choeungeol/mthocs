@@ -39,9 +39,16 @@ Route::get('/home', 'HomeController@index');
 /**
  * 시스템관리
  */
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('/', function() {
-       return view('app.admin.main');
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+
+    Route::get('/', 'AdminController@getMain');
+
+    Route::get('view/{path?}', function($path = null) {
+        if ($path === null) {
+            return view('app.admin.intro');
+        } else {
+            return view('app.admin.' . $path);
+        }
     });
 });
 

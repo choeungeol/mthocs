@@ -1,8 +1,8 @@
-<nav class="left-menu" left-menu ng-class="{'hidden-left-menu': hideLeftMenu}">
+<nav class="left-menu" left-menu>
     <div class="logo-container">
-        <a href="#/dashboards/alpha" class="logo">
-            <img src="../assets/common/img/logo.png" alt="Clean UI Admin Template" />
-            <img class="logo-inverse" src="../assets/common/img/logo-inverse.png" alt="Clean UI Admin Template" />
+        <a href="/" class="logo">
+            <img src="vendor/assets/common/img/logo.png" alt="마스터관리" />
+            <img class="logo-inverse" src="vendor/assets/common/img/logo-inverse.png" alt="마스터관리" />
         </a>
     </div>
     <div class="left-menu-inner scroll-pane">
@@ -10,7 +10,7 @@
             <li class="left-menu-list-submenu">
                 <a class="left-menu-link" href="javascript: void(0);">
                     <i class="left-menu-link-icon icmn-cog util-spin-delayed-pseudo"><!-- --></i>
-                    <span class="menu-top-hidden">화면</span>설정
+                    <span class="menu-top-hidden">화면</span> 설정
                 </a>
                 <ul class="left-menu-list list-unstyled">
                     <li>
@@ -83,13 +83,13 @@
                                 <div class="left-menu-block-item" id="options-mode">
                                     <div class="btn-group btn-group-justified" data-toggle="buttons">
                                         <div class="btn-group">
-                                            <label class="btn btn-default">
-                                                <input type="radio" name="options-mode" value="mode-superclean"> On
+                                            <label class="btn btn-default active">
+                                                <input type="radio" name="options-mode" value="mode-superclean" checked=""> On
                                             </label>
                                         </div>
                                         <div class="btn-group">
-                                            <label class="btn btn-default active">
-                                                <input type="radio" name="options-mode" value="mode-default" checked=""> Off
+                                            <label class="btn btn-default">
+                                                <input type="radio" name="options-mode" value="mode-default"> Off
                                             </label>
                                         </div>
                                     </div>
@@ -111,40 +111,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="left-menu-block-item">
-                                    <span class="font-weight-600">Menu Shadow:</span>
-                                </div>
-                                <div class="left-menu-block-item" id="mode-box-shadow">
-                                    <div class="btn-group btn-group-justified" data-toggle="buttons">
-                                        <div class="btn-group">
-                                            <label class="btn btn-default">
-                                                <input type="radio" name="mode-box-shadow" value="mode-box-shadow"> On
-                                            </label>
-                                        </div>
-                                        <div class="btn-group">
-                                            <label class="btn btn-default active">
-                                                <input type="radio" name="mode-box-shadow" value="mode-box-shadow-disabled" checked=""> Off
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="left-menu-block-item">
-                                    <span class="font-weight-600">Squared Corners:</span>
-                                </div>
-                                <div class="left-menu-block-item" id="mode-squared">
-                                    <div class="btn-group btn-group-justified" data-toggle="buttons">
-                                        <div class="btn-group">
-                                            <label class="btn btn-default">
-                                                <input type="radio" name="mode-squared" value="mode-squared"> On
-                                            </label>
-                                        </div>
-                                        <div class="btn-group">
-                                            <label class="btn btn-default active">
-                                                <input type="radio" name="mode-squared" value="mode-squared-disabled" checked=""> Off
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </li>
@@ -158,47 +124,19 @@
                 </a>
                 <ul class="left-menu-list list-unstyled">
                     <li>
-                        <a class="left-menu-link" href="#">
-                            장애분류
+                        <a class="left-menu-link" ui-sref="create_code_group">
+                            코드그룹생성
                         </a>
                     </li>
-                    <li>
-                        <a class="left-menu-link" href="#">
-                            종별
-                        </a>
-                    </li>
-                    <li>
-                        <a class="left-menu-link" href="#">
-                            유형
-                        </a>
-                    </li>
-                    <li>
-                        <a class="left-menu-link" href="#">
-                            관계
-                        </a>
-                    </li>
-                    <li>
-                        <a class="left-menu-link" href="#">
-                            자격구분
-                        </a>
-                    </li>
-                    <li>
-                        <a class="left-menu-link" href="#/pages/invoice">
-                            Invoice
-                        </a>
-                    </li>
-                    <li>
-                        <a class="left-menu-link" href="#/pages/page-404">
-                            Page 404
-                        </a>
-                    </li>
-                    <li>
-                        <a class="left-menu-link" href="#/pages/page-500">
-                            Page 500
+                    <li class="left-menu-list-separator"><!-- --></li>
+                    <li ng-repeat="codeGroup in codeGroups">
+                        <a class="left-menu-link" ui-sref="modify_code_group">
+                            @{{ codeGroup.group_name }}
                         </a>
                     </li>
                 </ul>
             </li>
+            <li class="left-menu-list-separator"><!-- --></li>
             <li class="left-menu-list-submenu">
                 <a class="left-menu-link" href="javascript: void(0);">
                     <i class="left-menu-link-icon icmn-cart5"><!-- --></i>
@@ -206,42 +144,42 @@
                 </a>
                 <ul class="left-menu-list list-unstyled">
                     <li>
-                        <a class="left-menu-link" href="#/ecommerce/dashboard">
+                        <a class="left-menu-link" href="ecommerce-dashboard.html">
                             Dashboard
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/ecommerce/orders">
+                        <a class="left-menu-link" href="ecommerce-orders.html">
                             Orders
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/ecommerce/products-list">
+                        <a class="left-menu-link" href="ecommerce-products-list.html">
                             Products List
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/ecommerce/products-catalog">
+                        <a class="left-menu-link" href="ecommerce-products-catalog.html">
                             Products Catalog
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/ecommerce/product-details">
+                        <a class="left-menu-link" href="ecommerce-product-details.html">
                             Product Details
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/ecommerce/product-edit">
+                        <a class="left-menu-link" href="ecommerce-product-edit.html">
                             Product Edit
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/ecommerce/cart">
+                        <a class="left-menu-link" href="ecommerce-cart.html">
                             Cart
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/ecommerce/checkout">
+                        <a class="left-menu-link" href="ecommerce-checkout.html">
                             Checkout
                         </a>
                     </li>
@@ -255,52 +193,52 @@
                 </a>
                 <ul class="left-menu-list list-unstyled">
                     <li>
-                        <a class="left-menu-link" href="#/forms/basic-form-elements">
+                        <a class="left-menu-link" href="forms-basic-form-elements.html">
                             Basic Form Elements
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/forms/buttons">
+                        <a class="left-menu-link" href="forms-buttons.html">
                             Buttons
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/forms/dropdowns">
+                        <a class="left-menu-link" href="forms-dropdowns.html">
                             Dropdowns
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/forms/selectboxes">
+                        <a class="left-menu-link" href="forms-selectboxes.html">
                             Selectboxes
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/forms/checkboxes-radio">
+                        <a class="left-menu-link" href="forms-checkboxes-radio.html">
                             Checkboxes / Radio
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/forms/form-wizard">
+                        <a class="left-menu-link" href="forms-form-wizard.html">
                             Form Wizard
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/forms/form-validation">
+                        <a class="left-menu-link" href="forms-form-validation.html">
                             Form Validation
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/forms/autocomplete">
+                        <a class="left-menu-link" href="forms-autocomplete.html">
                             Autocomplete
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/forms/input-mask">
+                        <a class="left-menu-link" href="forms-input-mask.html">
                             Input Mask
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/forms/extras">
+                        <a class="left-menu-link" href="forms-extras.html">
                             Extras
                         </a>
                     </li>
@@ -313,87 +251,87 @@
                 </a>
                 <ul class="left-menu-list list-unstyled">
                     <li>
-                        <a class="left-menu-link" href="#/components/date-picker">
+                        <a class="left-menu-link" href="components-date-picker.html">
                             Date Picker
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/calendar">
+                        <a class="left-menu-link" href="components-calendar.html">
                             Calendar
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/carousel">
+                        <a class="left-menu-link" href="components-carousel.html">
                             Carousel
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/media-players">
+                        <a class="left-menu-link" href="components-media-players.html">
                             Media Players <span class="label left-menu-label label-default">22$ FREE</span>
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/slider">
+                        <a class="left-menu-link" href="components-slider.html">
                             Slider
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/modal">
+                        <a class="left-menu-link" href="components-modal.html">
                             Modal
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/tooltips-popovers">
+                        <a class="left-menu-link" href="components-tooltips-popovers.html">
                             Tooltips & Popovers
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/notifications-alerts">
+                        <a class="left-menu-link" href="components-notifications-alerts.html">
                             Notifications & Alerts
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/loading-progress">
+                        <a class="left-menu-link" href="components-loading-progress.html">
                             Loading Progress
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/progress-bars">
+                        <a class="left-menu-link" href="components-progress-bars.html">
                             Progress Bars
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/badges-labels">
+                        <a class="left-menu-link" href="components-badges-labels.html">
                             Badges & Labels
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/steps">
+                        <a class="left-menu-link" href="components-steps.html">
                             Steps
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/pagination">
+                        <a class="left-menu-link" href="components-pagination.html">
                             Pagination
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/collapse">
+                        <a class="left-menu-link" href="components-collapse.html">
                             Collapse
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/tabs">
+                        <a class="left-menu-link" href="components-tabs.html">
                             Tabs
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/text-editor">
+                        <a class="left-menu-link" href="components-text-editor.html">
                             Text Editor
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/components/nestable">
+                        <a class="left-menu-link" href="components-nestable.html">
                             Nestable
                         </a>
                     </li>
@@ -406,17 +344,17 @@
                 </a>
                 <ul class="left-menu-list list-unstyled">
                     <li>
-                        <a class="left-menu-link" href="#/tables/basic-tables">
+                        <a class="left-menu-link" href="tables-basic-tables.html">
                             Basic Tables
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/tables/datatables">
+                        <a class="left-menu-link" href="tables-datatables.html">
                             DataTables
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/tables/editable-tables">
+                        <a class="left-menu-link" href="tables-editable-tables.html">
                             Editable Tables
                         </a>
                     </li>
@@ -429,55 +367,55 @@
                 </a>
                 <ul class="left-menu-list list-unstyled">
                     <li>
-                        <a class="left-menu-link" href="#/charts/chartistjs">
+                        <a class="left-menu-link" href="charts-chartistjs.html">
                             Chartist.js
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/charts/c3">
+                        <a class="left-menu-link" href="charts-c3.html">
                             C3
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/charts/peity">
+                        <a class="left-menu-link" href="charts-peity.html">
                             Peity
                         </a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a class="left-menu-link" href="#/components/mail-templates">
+                <a class="left-menu-link" href="components-mail-templates">
                     <i class="left-menu-link-icon icmn-mail2"><!-- --></i>
                     Mail Templates
                 </a>
             </li>
             <li class="left-menu-list-separator"><!-- --></li>
             <li>
-                <a class="left-menu-link" href="#/apps/profile">
+                <a class="left-menu-link" href="apps-profile.html">
                     <i class="left-menu-link-icon icmn-profile"><!-- --></i>
                     Profile
                 </a>
             </li>
             <li>
-                <a class="left-menu-link" href="#/apps/messaging">
+                <a class="left-menu-link" href="apps-messaging.html">
                     <i class="left-menu-link-icon icmn-bubbles5"><!-- --></i>
                     Messaging
                 </a>
             </li>
             <li>
-                <a class="left-menu-link" href="#/apps/mail">
+                <a class="left-menu-link" href="apps-mail.html">
                     <i class="left-menu-link-icon icmn-mail2"><!-- --></i>
                     Mail
                 </a>
             </li>
             <li>
-                <a class="left-menu-link" href="#/apps/calendar">
+                <a class="left-menu-link" href="apps-calendar.html">
                     <i class="left-menu-link-icon icmn-calendar"><!-- --></i>
                     Calendar
                 </a>
             </li>
             <li>
-                <a class="left-menu-link" href="#/apps/gallery">
+                <a class="left-menu-link" href="apps-gallery.html">
                     <i class="left-menu-link-icon icmn-images"><!-- --></i>
                     Gallery
                 </a>
@@ -490,22 +428,22 @@
                 </a>
                 <ul class="left-menu-list list-unstyled">
                     <li>
-                        <a class="left-menu-link" href="#/layout/grid">
+                        <a class="left-menu-link" href="layout-grid.html">
                             Grid
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/layout/panels">
+                        <a class="left-menu-link" href="layout-panels.html">
                             Panels / Cards
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/layout/sidebars">
+                        <a class="left-menu-link" href="layout-sidebars.html">
                             Sidebars
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/layout/utilities">
+                        <a class="left-menu-link" href="layout-utilities.html">
                             Utilities
                         </a>
                     </li>
@@ -518,19 +456,19 @@
                 </a>
                 <ul class="left-menu-list list-unstyled">
                     <li>
-                        <a class="left-menu-link" href="#/icons/icomoon-ultimate">
+                        <a class="left-menu-link" href="icons-icomoon-ultimate.html">
                             IcoMoon Ultimate <span class="label left-menu-label label-default">59$ FREE</span>
                         </a>
                     </li>
                     <li>
-                        <a class="left-menu-link" href="#/icons/fontawesome">
+                        <a class="left-menu-link" href="icons-fontawesome.html">
                             FontAwesome
                         </a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a class="left-menu-link" href="#/layout/typography">
+                <a class="left-menu-link" href="layout-typography.html">
                     <i class="left-menu-link-icon icmn-font-size"><!-- --></i>
                     Typography
                 </a>
@@ -596,6 +534,67 @@
 
             </li>
             <li class="left-menu-list-separator"><!-- --></li>
+            <li class="menu-top-hidden no-colorful-menu">
+                <div class="left-menu-item">
+                    Last Week Sales
+                </div>
+            </li>
+            <li class="menu-top-hidden no-colorful-menu">
+                <div class="example-left-menu-chart chartist-animated chartist-theme-dark"></div>
+                <script>
+                    $(function () {
+                        // CSS STYLING & ANIMATIONS
+                        var cssAnimationData = {
+                                    labels: ["S", "M", "T", "W", "T", "F", "S"],
+                                    series: [
+                                        [11, 14, 24, 16, 20, 16, 24]
+                                    ]
+                                },
+                                cssAnimationOptions = {
+                                    fullWidth: !0,
+                                    chartPadding: {
+                                        right: 2,
+                                        left: 30
+                                    },
+                                    axisY: {
+                                        position: 'end'
+                                    }
+                                },
+                                cssAnimationResponsiveOptions = [
+                                    [{
+                                        axisX: {
+                                            labelInterpolationFnc: function(value, index) {
+                                                return index % 2 !== 0 ? !1 : value
+                                            }
+                                        }
+                                    }]
+                                ];
+
+                        new Chartist.Line(".example-left-menu-chart", cssAnimationData, cssAnimationOptions, cssAnimationResponsiveOptions);
+
+                    });
+                </script>
+            </li>
+            <li class="menu-top-hidden no-colorful-menu">
+                <div class="left-menu-item">
+                    Solar System
+                </div>
+            </li>
+            <li class="menu-top-hidden">
+                <div class="left-menu-item">
+                    <span class="donut donut-success"></span> Jupiter
+                </div>
+            </li>
+            <li class="menu-top-hidden">
+                <div class="left-menu-item">
+                    <span class="donut donut-primary"></span> Earth
+                </div>
+            </li>
+            <li class="menu-top-hidden">
+                <div class="left-menu-item">
+                    <span class="donut donut-danger"></span> Mercury
+                </div>
+            </li>
         </ul>
     </div>
 </nav>

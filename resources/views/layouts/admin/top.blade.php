@@ -1,4 +1,4 @@
-<nav class="top-menu" ng-class="{'hidden-top-menu': hideTopMenu}">
+<nav class="top-menu">
     <div class="menu-icon-container hidden-md-up">
         <div class="animate-menu-button left-menu-toggle">
             <div><!-- --></div>
@@ -9,7 +9,7 @@
             <div class="dropdown dropdown-avatar">
                 <a href="javascript: void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <span class="avatar" href="javascript:void(0);">
-                        <img src="../assets/common/img/temp/avatars/1.jpg" alt="Alternative text to the image">
+                        <img src="vendor/assets/common/img/temp/avatars/1.jpg" alt="Alternative text to the image">
                     </span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="" role="menu">
@@ -67,6 +67,22 @@
                             <a class="dropdown-item" href="javascript:void(0)">Marketing</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon icmn-cog"></i> Settings</a>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="javascript: void(0);" class="dropdown-toggle dropdown-inline-button" data-toggle="dropdown" aria-expanded="false">
+                            <i class="dropdown-inline-button-icon icmn-price-tags"></i>
+                            <span class="hidden-lg-down">Projects</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="" role="menu">
+                            <div class="dropdown-header">Current projects</div>
+                            <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon icmn-checkmark"></i> Clean UI Theme</a>
+                            <div class="dropdown-header">Other projects</div>
+                            <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon icmn-clock"></i> Clean HTML Player</a>
+                            <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon icmn-clock"></i> KidsLocation</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon icmn-list"></i> Project Management</a>
                         </ul>
                     </div>
                 </div>
