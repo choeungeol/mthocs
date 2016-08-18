@@ -30,7 +30,7 @@
                     <div class="dropdown">
                         <a href="javascript: void(0);" class="dropdown-toggle dropdown-inline-button" data-toggle="dropdown" aria-expanded="false">
                             <i class="dropdown-inline-button-icon icmn-folder-open"></i>
-                            <span class="hidden-lg-down">Issues History</span>
+                            <span class="hidden-lg-down">나의작업관리</span>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="" role="menu">
@@ -55,7 +55,7 @@
                     <div class="dropdown">
                         <a href="javascript: void(0);" class="dropdown-toggle dropdown-inline-button" data-toggle="dropdown" aria-expanded="false">
                             <i class="dropdown-inline-button-icon icmn-database"></i>
-                            <span class="hidden-lg-down">Dashboards</span>
+                            <span class="hidden-lg-down">대시보드</span>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="" role="menu">
@@ -72,7 +72,7 @@
                     <div class="dropdown">
                         <a href="javascript: void(0);" class="dropdown-toggle dropdown-inline-button" data-toggle="dropdown" aria-expanded="false">
                             <i class="dropdown-inline-button-icon icmn-price-tags"></i>
-                            <span class="hidden-lg-down">Projects</span>
+                            <span class="hidden-lg-down">공지사항</span>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="" role="menu">
