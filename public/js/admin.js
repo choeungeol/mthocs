@@ -2,7 +2,7 @@
  * Created by hankwanghoon on 2016. 8. 14..
  */
 
-var app = angular.module('adminApp', ['ngResource', 'ui.router']);
+var app = angular.module('adminApp', ['ngResource', 'ui.router', 'angular-ladda']);
 
 app.config(function($stateProvider) {
     $stateProvider
@@ -44,16 +44,19 @@ app.controller('adminController',['$scope', '$http' , '$state', function($scope,
 
 }]);
 
-app.controller('createCodeGroupController', ['$scope', function($scope) {
+app.controller('createCodeGroupController', ['$scope', '$timeout', function($scope, $timeout) {
 
-    $scope.doNotSave = false;
+    $scope.laddaControl = false;
 
     $scope.newCodeGroup = {group_id: '', group_name: ''};
     $scope.newCodes = [];
 
     $scope.saveCodeGroup = function() {
-        $scope.doNotSave = true;
+        $scope.laddaControl = true;
         console.log('save');
+        $timeout(function() {
+            $scope.laddaControl = false; // stop loading
+        }, 2000)
     };
 
     $scope.addRow = function() {

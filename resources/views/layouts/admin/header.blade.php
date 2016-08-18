@@ -43,6 +43,9 @@
     <!-- Clean UI Styles -->
     <link rel="stylesheet" type="text/css" href="vendor/assets/common/css/source/main.css">
 
+    <!-- Other Styles -->
+    <link rel="stylesheet" href="bower_components/ladda/dist/ladda-themeless.min.css">
+
     <!-- Vendors Scripts -->
     <!-- v1.0.0 -->
     <script src="vendor/assets/vendors/jquery/jquery.min.js"></script>
@@ -91,5 +94,7 @@
     <!-- Clean UI Scripts -->
     <script src="vendor/assets/common/js/common.js"></script>
     <script src="vendor/assets/common/js/demo.temp.js"></script>
+
+    <!-- Scripts Other -->
 </head>
 <body class="theme-default" ng-controller="adminController">

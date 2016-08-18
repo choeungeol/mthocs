@@ -67,12 +67,15 @@
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <h5>코드리스트</h5>
-                                                            <div class="btn-group margin-inline" aria-label="" role="group">
-                                                                <button type="button" class="btn btn-xs btn-success" ng-click="addRow()">
+                                                            <div class="btn-group margin-inline" aria-label=""
+                                                                 role="group">
+                                                                <button type="button" class="btn btn-xs btn-success"
+                                                                        ng-click="addRow()">
                                                                     <i class="icmn-plus3" aria-hidden="true"></i>
                                                                     추가
                                                                 </button>
-                                                                <button type="button" class="btn btn-xs btn-warning" ng-click="deleteRow()">
+                                                                <button type="button" class="btn btn-xs btn-warning"
+                                                                        ng-click="deleteRow()">
                                                                     <i class="icmn-minus3" aria-hidden="true"></i>
                                                                     삭제
                                                                 </button>
@@ -90,36 +93,40 @@
                                                                     <tbody ng-repeat="code in newCodes" ng-form="form2">
                                                                     <tr>
                                                                         <td class="text-center">
-                                                                            <input  type="checkbox"
-                                                                                    class="input-sm"
-                                                                                    name="chk"
-                                                                                    ng-model="code.chk">
+                                                                            <input type="checkbox"
+                                                                                   class="input-sm"
+                                                                                   name="chk"
+                                                                                   ng-model="code.chk">
                                                                         </td>
                                                                         <td>
-                                                                            <input  type="text"
-                                                                                    class="form-control input-sm text-uppercase"
-                                                                                    name="code_id"
-                                                                                    ng-model="code.code_id"
-                                                                                    required>
+                                                                            <input type="text"
+                                                                                   class="form-control input-sm text-uppercase"
+                                                                                   name="code_id"
+                                                                                   ng-model="code.code_id"
+                                                                                   required>
                                                                         </td>
                                                                         <td>
-                                                                            <input  type="text"
-                                                                                    class="form-control input-sm"
-                                                                                    name="code_name"
-                                                                                    ng-model="code.code_name"
-                                                                                    required>
+                                                                            <input type="text"
+                                                                                   class="form-control input-sm"
+                                                                                   name="code_name"
+                                                                                   ng-model="code.code_name"
+                                                                                   required>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-control-error-list input-sm"
                                                                                  ng-show="form2.code_id.$error && (form1.$submitted || form2.code_id.$dirty)">
                                                                                 <ul>
-                                                                                    <li ng-show="form2.code_id.$error.required">코드 ID는 필수값입니다</li>
+                                                                                    <li ng-show="form2.code_id.$error.required">
+                                                                                        코드 ID는 필수값입니다
+                                                                                    </li>
                                                                                 </ul>
                                                                             </div>
                                                                             <div class="form-control-error-list input-sm"
                                                                                  ng-show="form2.code_name.$error && (form1.$submitted || form2.code_name.$dirty)">
                                                                                 <ul>
-                                                                                    <li ng-show="form2.code_name.$error.required">코드 명은 필수값입니다</li>
+                                                                                    <li ng-show="form2.code_name.$error.required">
+                                                                                        코드 명은 필수값입니다
+                                                                                    </li>
                                                                                 </ul>
                                                                             </div>
                                                                         </td>
@@ -135,7 +142,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="alert alert-danger" role="alert" ng-show="form1.$submitted && ( form1.$invalid || form2.$invalid )">
+                            <div class="alert alert-danger" role="alert"
+                                 ng-show="form1.$submitted && ( form1.$invalid || form2.$invalid )">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                 </button>
@@ -148,8 +156,9 @@
                             </div>
                             <div class="form-actions">
                                 <button type="submit"
-                                        class="btn btn-sm btn-primary width-100"
-                                        ng-class="{ 'disabled': doNotSave }">
+                                        ladda="laddaControl"
+                                        data-style="expand-left"
+                                        class="btn btn-sm btn-primary width-100">
                                     저장
                                 </button>
                                 <button type="button" class="btn btn-sm btn-default" ui-sref="intro">취소</button>
