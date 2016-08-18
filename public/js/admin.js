@@ -56,11 +56,29 @@ app.controller('createCodeGroupController', ['$scope', '$timeout', function($sco
         console.log('save');
         $timeout(function() {
             $scope.laddaControl = false; // stop loading
-        }, 2000)
+        }, 2000);
+        //clearForm();
     };
 
     $scope.addRow = function() {
         $scope.newCodes.push({chk: '', code_id: '', code_name: '', error: false, error_list: []});
+    };
+
+    $scope.selAllRow = function() {
+
+        var i;
+
+        for ( i  = $scope.newCodes.length - 1 ; i>= 0 ; i -= 1 ) {
+            $scope.newCodes[i].chk = true;
+        }
+    };
+
+    $scope.selNoRow = function() {
+        var i;
+
+        for ( i  = $scope.newCodes.length - 1 ; i>= 0 ; i -= 1 ) {
+            $scope.newCodes[i].chk = false;
+        }
     };
 
     $scope.deleteRow = function() {
@@ -73,6 +91,11 @@ app.controller('createCodeGroupController', ['$scope', '$timeout', function($sco
             }
         }
     };
+
+    function clearForm() {
+        $scope.form1.$setPristine();
+        $scope.form1.$setUntouched();
+    }
 
 }]);
 
