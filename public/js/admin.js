@@ -15,7 +15,10 @@ app.config(function($stateProvider) {
         .state('create_code_group', {
             url: "/create_code_group",
             views: {
-                "adminContent": {templateUrl: "/admin/view/createCodeGroup"}
+                "adminContent": {
+                    templateUrl: "/admin/view/createCodeGroup",
+                    controller: "createCodeGroupController"
+                }
             }
         })
         .state('modify_code_group', {
@@ -37,6 +40,35 @@ app.controller('adminController',['$scope', '$http' , '$state', function($scope,
     $scope.clickCodeGroup = function ($codeGroup) {
         console.log($codeGroup);
         $state.go('modify_code_group')
+    };
+
+}]);
+
+app.controller('createCodeGroupController', ['$scope', function($scope) {
+
+    $scope.doNotSave = false;
+
+    $scope.newCodeGroup = {group_id: '', group_name: ''};
+    $scope.newCodes = [];
+
+    $scope.saveCodeGroup = function() {
+        $scope.doNotSave = true;
+        console.log('save');
+    };
+
+    $scope.addRow = function() {
+        $scope.newCodes.push({chk: '', code_id: '', code_name: '', error: false, error_list: []});
+    };
+
+    $scope.deleteRow = function() {
+
+        var i;
+
+        for ( i  = $scope.newCodes.length - 1 ; i>= 0 ; i -= 1 ) {
+            if ($scope.newCodes[i].chk === true) {
+                $scope.newCodes.splice(i, 1);
+            }
+        }
     };
 
 }]);
