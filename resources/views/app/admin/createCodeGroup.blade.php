@@ -158,6 +158,7 @@
                                 <button type="submit"
                                         ladda="laddaControl"
                                         data-style="expand-left"
+                                        ng-class="{ 'disabled': ( form1.$invalid || form2.$invalid ) || !form1.$dirty }"
                                         class="btn btn-sm btn-primary width-100">
                                     저장
                                 </button>
