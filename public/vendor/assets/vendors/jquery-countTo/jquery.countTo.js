@@ -1,4 +1,4 @@
-(function (factory) {
+jQuery(function (factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD
         define(['jquery'], factory);

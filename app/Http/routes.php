@@ -55,7 +55,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 /**
  * 코드그룹/코드
  */
-Route::resource('mth-code-group', 'MthCodeGroupController');
-Route::resource('mth-code', 'MthCodeController');
+Route::group(['prefix' => 'api', 'middleware' => 'auth'], function() {
+
+    Route::post('/create/code-group', 'CodeGroupController@create');
+
+    Route::post('/update/code-group', 'CodeGroupController@update');
+
+    Route::resource('/mth-code-group', 'MthCodeGroupController');
+
+});
 
 

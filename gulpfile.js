@@ -1,4 +1,7 @@
-var elixir      = require('laravel-elixir');
+var elixir = require('laravel-elixir');
+
+//소스매핑파일을 만들지 않는다
+elixir.config.sourcemaps = false;
 
 /*
  |--------------------------------------------------------------------------
@@ -11,13 +14,18 @@ var elixir      = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
-    //Clean UI 이동
+elixir(function (mix) {
+
+
+    // CSS파일 이동
     mix.copy('resources/vendor/cleanui/build/assets', 'public/vendor/assets');
 
     mix.scripts(
         [
-            'admin.js'
+            'app/admin/admin.js',
+            'app/admin/admin_controller.js',
+            'app/admin/admin_service.js',
+            'app/admin/admin_directive.js'
         ], 'public/js/admin.js'
     ).browserSync({proxy: 'mthocsemr.app'});
 });

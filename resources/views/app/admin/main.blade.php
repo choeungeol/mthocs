@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('app.admin.admin')
 
 <!-- 컨텐츠 -->
 @section('content')
