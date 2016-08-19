@@ -7,7 +7,7 @@
  * module.provider  : 서비스를 보다 세밀하게 정의. 복잡하며 장황. 애플리케이션 설정하는 동안 서비스의 동작 변경에 유용
  */
 
-adminApp.service('CodeGroupService', function() {
+app.service('CodeGroupService', function() {
 
     var service = this;
 
