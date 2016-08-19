@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="adminApp">
+<html ng-app="Mth.Admin">
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -102,4 +102,4 @@
 
     <!-- Scripts Other -->
 </head>
-<body class="theme-default" ng-controller="adminController">
+<body class="theme-default">

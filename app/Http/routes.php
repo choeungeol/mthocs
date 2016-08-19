@@ -43,11 +43,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     Route::get('/', 'AdminController@getMain');
 
-    Route::get('view/{path?}', function($path = null) {
-        if ($path === null) {
+    Route::get('view/{app?}', function($app = null) {
+        if ($app === null or $app == 'intro') {
+            return view('app.admin.intro');
+        }
+    });
+
+    Route::get('view/code/{subview?}', function($subview = null) {
+
+        if ( $subview === null ) {
             return view('app.admin.intro');
         } else {
-            return view('app.admin.' . $path);
+            return view('app.admin.code.' . $subview);
         }
     });
 });

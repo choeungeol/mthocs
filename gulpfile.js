@@ -22,10 +22,12 @@ elixir(function (mix) {
 
     mix.scripts(
         [
-            'app/admin/admin.js',
-            'app/admin/admin_controller.js',
-            'app/admin/admin_service.js',
-            'app/admin/admin_directive.js'
-        ], 'public/js/admin.js'
+            'app/admin/Admin.js',
+            'app/admin/controllers/MainController.js',
+            'app/admin/controllers/CreateCodeGroupController.js',
+            'app/admin/services/CodeGroupService.js',
+            'app/util/Utils.js',
+            'app/util/services/ArrayUtilService.js',
+        ], 'public/js/Admin.js'
     ).browserSync({proxy: 'mthocsemr.app'});
 });
