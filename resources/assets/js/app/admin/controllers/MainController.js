@@ -1,11 +1,12 @@
 angular.module('Mth.Admin')
-    .controller('MainController',['$scope', '$http' , '$state', function($scope, $http, $state) {
+    .controller('MainController',['$scope', '$http' , '$state', 'CodeGroupService', function($scope, $http, $state, $code) {
 
-        $http.get("/api/mth-code-group")
-            .then(
-                function(response){
-                    $scope.codeGroups = response.data;
-                });
+        $code.getCodeGroupLists()
+            .then(function(result) {
+                $scope.codeGroups = result;
+            }, function(reason) {
+
+            });
 
         $scope.clickCodeGroup = function ($codeGroup) {
             console.log($codeGroup);

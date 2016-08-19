@@ -32,13 +32,14 @@ angular.module('Mth.Admin')
     );
 
 angular.module('Mth.Admin')
-    .controller('MainController',['$scope', '$http' , '$state', function($scope, $http, $state) {
+    .controller('MainController',['$scope', '$http' , '$state', 'CodeGroupService', function($scope, $http, $state, $code) {
 
-        $http.get("/api/mth-code-group")
-            .then(
-                function(response){
-                    $scope.codeGroups = response.data;
-                });
+        $code.getCodeGroupLists()
+            .then(function(result) {
+                $scope.codeGroups = result;
+            }, function(reason) {
+
+            });
 
         $scope.clickCodeGroup = function ($codeGroup) {
             console.log($codeGroup);
@@ -108,28 +109,22 @@ angular.module('Mth.Admin')
  * module.provider  : 서비스를 보다 세밀하게 정의. 복잡하며 장황. 애플리케이션 설정하는 동안 서비스의 동작 변경에 유용
  */
 angular.module('Mth.Admin')
-    .service('CodeGroupService', function() {
-
+    .service('CodeGroupService',[ '$http', function($http) {
         //가장 먼저 현재 객체에 대한 참조값을 저장 - 권장사항
         var service = this;
 
         service.getCodeGroupLists = function() {
-            $http.get("/api/mth-code-group").then(
-
-                function(result){
-                    return result.data;
-                }),
-
-                function(reason) {
-                    console.log(reason);
-                }
+            return $http.get("/api/mth-code-group")
+                .then(
+                    function(result){
+                        return result.data;
+                    }
+                );
         };
-
-    });
+    }]);
 /**
  * Created by hankwanghoon on 2016. 8. 14..
  */
-
 angular.module('Mth.Utils', []);
 angular.module('Mth.Utils')
     .service('UtilsService', function() {

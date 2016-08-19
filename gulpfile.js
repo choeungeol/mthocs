@@ -16,8 +16,6 @@ elixir.config.sourcemaps = false;
 
 elixir(function (mix) {
 
-
-    // CSS파일 이동
     mix.copy('resources/vendor/cleanui/build/assets', 'public/vendor/assets');
 
     mix.scripts(
@@ -25,7 +23,7 @@ elixir(function (mix) {
             'app/admin/Admin.js',
             'app/admin/controllers/MainController.js',
             'app/admin/controllers/CreateCodeGroupController.js',
-            'app/admin/services/CodeGroupService.js',
+            'app/admin/models/CodeGroupModel.js',
             'app/util/Utils.js',
             'app/util/services/ArrayUtilService.js',
         ], 'public/js/Admin.js'

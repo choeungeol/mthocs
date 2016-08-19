@@ -102,4 +102,4 @@
 
     <!-- Scripts Other -->
 </head>
-<body class="theme-default">
+<body class="theme-default" ng-controller="MainController">

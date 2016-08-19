@@ -7,21 +7,16 @@
  * module.provider  : 서비스를 보다 세밀하게 정의. 복잡하며 장황. 애플리케이션 설정하는 동안 서비스의 동작 변경에 유용
  */
 angular.module('Mth.Admin')
-    .service('CodeGroupService', function() {
-
+    .service('CodeGroupService',[ '$http', function($http) {
         //가장 먼저 현재 객체에 대한 참조값을 저장 - 권장사항
         var service = this;
 
         service.getCodeGroupLists = function() {
-            $http.get("/api/mth-code-group").then(
-
-                function(result){
-                    return result.data;
-                }),
-
-                function(reason) {
-                    console.log(reason);
-                }
+            return $http.get("/api/mth-code-group")
+                .then(
+                    function(result){
+                        return result.data;
+                    }
+                );
         };
-
-    });
+    }]);
