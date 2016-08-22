@@ -15,7 +15,11 @@
         "laravel/socialite": "^2.0",
         "socialiteproviders/kakao": "^2.0",
         "laravelcollective/html": "^5.2",
-        "caouecs/laravel-lang": "^3.0"
+        "caouecs/laravel-lang": "^3.0",
+        "symfony/psr-http-message-bridge": "^0.2.0",
+        "zendframework/zend-diactoros": "^1.3",
+        "bocharsky-bw/arrayzy": "^0.6.1",
+        "graze/sort": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

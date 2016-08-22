@@ -37,7 +37,7 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index');
 
 /**
- * 시스템관리
+ * 시스템관리뷰처리
  */
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
@@ -45,14 +45,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     Route::get('view/{app?}', function($app = null) {
         if ($app === null or $app == 'intro') {
-            return view('app.admin.intro');
+            return view('app.admin.intro.intro');
         }
     });
 
     Route::get('view/code/{subview?}', function($subview = null) {
 
         if ( $subview === null ) {
-            return view('app.admin.intro');
+            return view('app.admin.intro.intro');
         } else {
             return view('app.admin.code.' . $subview);
         }

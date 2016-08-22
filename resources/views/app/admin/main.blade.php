@@ -1,8 +1,8 @@
-@extends('app.admin.admin')
+@extends('app.admin.layout.structure')
 
 <!-- 컨텐츠 -->
 @section('content')
-    <section class="page-content" style="padding:0px; margin:0px;">
+    <section class="page-content">
         <div ui-view="adminContent"></div>
     </section>
 @endsection

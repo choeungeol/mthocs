@@ -125,11 +125,6 @@
                     </div>
                 </div>
             </div>
-            <div class="right example-buy-btn hidden-xs-down">
-                <a href="https://themeforest.net/item/clean-ui-premium-bootstrap-4-admin-template-angular-starter-kit/16678285?s_rank=4&ref=mediatec_software" target="_blank" class="btn btn-success-outline btn-rounded">
-                    Buy Now 18$
-                </a>
-            </div>
         </div>
     </div>
 </nav>
