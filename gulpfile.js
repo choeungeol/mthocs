@@ -20,12 +20,18 @@ elixir(function (mix) {
 
     mix.scripts(
         [
-            'app/admin/Admin.js',
-            'app/admin/controllers/MainController.js',
-            'app/admin/controllers/CreateCodeGroupController.js',
-            'app/admin/models/CodeGroupModel.js',
-            'app/util/Utils.js',
-            'app/util/services/ArrayUtilService.js',
-        ], 'public/js/Admin.js'
+            'app/admin/admin.module.js',
+            'app/admin/route.config.js',
+            'app/admin/services/exception.service.js',
+            'app/admin/services/message.service.js',
+            'app/admin/controllers/main.controller.js',
+            'app/admin/controllers/createCodeGroup.controller.js',
+            'app/admin/controllers/modifyCodeGroup.controller.js',
+            'app/admin/controllers/intro.controller.js',
+            'app/admin/models/codeGroup.model.js',
+            'app/util/utils.module.js',
+            'app/util/services/arrayUtil.service.js',
+        ]
+        , 'public/js/admin.js'
     ).browserSync({proxy: 'mthocsemr.app'});
 });

@@ -70,22 +70,22 @@
                                                             <div class="btn-group margin-inline" aria-label=""
                                                                  role="group">
                                                                 <button type="button" class="btn btn-xs btn-primary"
-                                                                        ng-click="addRow()">
+                                                                        ng-click="newCode.addRow()">
                                                                     <i class="icmn-plus3" aria-hidden="true"></i>
                                                                     추가
                                                                 </button>
                                                                 <button type="button" class="btn btn-xs btn-success"
-                                                                        ng-click="selAllRow()">
+                                                                        ng-click="newCode.selAllRow()">
                                                                     <i class="icmn-stack-check" aria-hidden="true"></i>
                                                                     선택
                                                                 </button>
                                                                 <button type="button" class="btn btn-xs btn-warning"
-                                                                        ng-click="selNoRow()">
+                                                                        ng-click="newCode.selNoRow()">
                                                                     <i class="icmn-stack-cancel" aria-hidden="true"></i>
                                                                     해제
                                                                 </button>
                                                                 <button type="button" class="btn btn-xs btn-danger"
-                                                                        ng-click="deleteRow()">
+                                                                        ng-click="newCode.deleteRow()">
                                                                     <i class="icmn-minus3" aria-hidden="true"></i>
                                                                     삭제
                                                                 </button>
@@ -100,7 +100,7 @@
                                                                         <th class="text-center">메세지</th>
                                                                     </tr>
                                                                     </thead>
-                                                                    <tbody ng-repeat="code in newCodes" ng-form="form2">
+                                                                    <tbody ng-repeat="code in newCode.newCodes" ng-form="form2">
                                                                     <tr>
                                                                         <td class="text-center">
                                                                             <input type="checkbox"

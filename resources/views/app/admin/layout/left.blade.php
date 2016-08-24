@@ -129,8 +129,8 @@
                         </a>
                     </li>
                     <li class="left-menu-list-separator"><!-- --></li>
-                    <li ng-repeat="codeGroup in codeGroups">
-                        <a class="left-menu-link" href="javascript: void(0)" ng-click="clickCodeGroup(codeGroup)">
+                    <li ng-repeat="codeGroup in main.codeGroups">
+                        <a class="left-menu-link" href="javascript: void(0)" ng-click="main.clickCodeGroup(codeGroup)">
                             @{{ codeGroup.group_name }}
                         </a>
                     </li>

@@ -64,33 +64,24 @@
 })();
 
 
-(function () {
-    angular
-        .module('Mth.Admin')
-        .factory('exception', exception);
+angular
+    .module('Mth.Admin')
+    .factory('exception', exception);
 
-    exception.$inject = ['logger'];
+exception.$inject = ['logger'];
 
-    function exception(logger) {
-        var service = {
-            catcher: catcher
+function exception(logger) {
+    var service = {
+        catcher: catcher
+    };
+    return service;
+
+    function catcher(message) {
+        return function(reason) {
+            logger.error(message, reason);
         };
-        return service;
-
-        function catcher(message) {
-            return function (reason) {
-                logger.error(message, reason);
-            };
-        }
     }
-})();
-(function () {
-    angular
-        .module('Mth.Admin')
-        .value('MESSAGE_LIST', [
-            {error1 : '코드그룹을 가져오지 못했습니다'}
-        ]);
-})();
+}
 (function() {
 
     'use strict';
@@ -98,17 +89,14 @@
     angular.module('Mth.Admin')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['$scope', '$http' , '$state', 'CodeGroupModel', 'toastr', 'MESSAGE_LIST'];
+    MainController.$inject = ['$scope', '$http' , '$state', 'CodeGroupModel', 'toastr'];
 
-    function MainController($scope, $http, $state, $code, toastr, message_list) {
+    function MainController($scope, $http, $state, $code, toastr) {
         var main = this;
 
         // 뷰에서 사용하는 변수
         main.clickCodeGroup = clickCodeGroup;
         main.codeGroups;
-
-        //변수
-        var messages = message_list;
 
         // 초기활성로직
         activate();
@@ -124,7 +112,7 @@
                 .then(function(result) {
                     main.codeGroups = result;
                 }, function(reason) {
-                    toastr.error(messages[0].error1, 'Error');
+                    toastr.error('코드그룹을 가져오지 못하였습니다', 'Error');
                 });
         }
 

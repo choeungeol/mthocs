@@ -50,6 +50,7 @@
 
     <!-- Other Styles -->
     <link rel="stylesheet" href="bower_components/ladda/dist/ladda-themeless.min.css">
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.min.css">
 
     <!-- Vendors Scripts -->
     <!-- v1.0.0 -->
@@ -86,6 +87,7 @@
     <script src="vendor/assets/vendors/c3/c3.min.js"></script>
     <script src="vendor/assets/vendors/chartist/dist/chartist.min.js"></script>
     <script src="vendor/assets/vendors/peity/jquery.peity.min.js"></script>
+
     <!-- v1.0.1 -->
     <script src="vendor/assets/vendors/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
     <!-- v1.1.1 -->
@@ -102,4 +104,4 @@
 
     <!-- Scripts Other -->
 </head>
-<body class="theme-default" ng-controller="MainController">
+<body class="theme-default" ng-controller="MainController as main">
