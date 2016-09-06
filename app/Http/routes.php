@@ -59,6 +59,77 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     });
 });
 
+Route::group(['prefix' => 'receipt', 'middleware' => 'auth'], function() {
+
+      Route::get('/', 'ReceiptController@getMain');
+
+      Route::get('view/{apps?}', function($apps = null) {
+          if ($apps === null or $apps == 'intro') {
+              return view('app.receipt.intro.intro');
+          }
+      });
+});
+
+Route::group(['prefix' => 'basicbiopsy', 'middleware' => 'auth'], function() {
+
+    Route::get('/', 'BasicBiopsyController@getMain');
+
+    Route::get('view/{apps?}', function($apps = null) {
+        if ($apps === null or $apps == 'intro') {
+            return view('app.basicbiopsy.intro.intro');
+
+        }
+    });
+});
+
+Route::group(['prefix' => 'healthcare', 'middleware' => 'auth'], function() {
+
+    Route::get('/', 'HealthcareController@getMain');
+
+    Route::get('view/{apps?}', function($apps = null) {
+        if ($apps === null or $apps == 'intro') {
+            return view('app.healthcare.intro.intro');
+
+        }
+    });
+});
+
+Route::group(['prefix' => 'nurseroom', 'middleware' => 'auth'], function() {
+
+    Route::get('/', 'NurseroomController@getMain');
+
+    Route::get('view/{apps?}', function($apps = null) {
+        if ($apps === null or $apps == 'intro') {
+            return view('app.nurseroom.intro.intro');
+
+        }
+    });
+});
+
+Route::group(['prefix' => 'pharmacy', 'middleware' => 'auth'], function() {
+
+    Route::get('/', 'PharmacyController@getMain');
+
+    Route::get('view/{apps?}', function($apps = null) {
+        if ($apps === null or $apps == 'intro') {
+            return view('app.pharmacy.intro.intro');
+
+        }
+    });
+});
+
+Route::group(['prefix' => 'disease', 'middleware' => 'auth'], function() {
+
+    Route::get('/', 'DiseaseController@getMain');
+
+    Route::get('view/{apps?}', function($apps = null) {
+        if ($apps === null or $apps == 'intro') {
+            return view('app.disease.intro.intro');
+
+        }
+    });
+});
+
 /**
  * 코드그룹/코드
  */
